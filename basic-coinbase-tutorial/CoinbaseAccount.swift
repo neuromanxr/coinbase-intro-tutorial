@@ -7,20 +7,6 @@
 //
 
 class CoinbaseAccount: Decodable {
-    /*"id": "58542935-67b5-56e1-a3f9-42686e07fa40",
-    "name": "My Vault",
-    "primary": false,
-    "type": "vault",
-    "currency": "BTC",
-    "balance": {
-    "amount": "4.00000000",
-    "currency": "BTC"
-    },
-    "created_at": "2015-01-31T20:49:02Z",
-    "updated_at": "2015-01-31T20:49:02Z",
-    "resource": "account",
-    "resource_path": "/v2/accounts/58542935-67b5-56e1-a3f9-42686e07fa40",
-    "ready": true*/
     var id: String!
     var name: String!
     var primary: Bool!
@@ -82,7 +68,6 @@ class CoinbaseAccount: Decodable {
         let updated_at: String = try values.decode(String.self, forKey: .updated_at)
         let resource: String = try values.decode(String.self, forKey: .resource)
         let resourcePath: String = try values.decode(String.self, forKey: .resourcePath)
-//        let ready: Bool = try values.decode(Bool.self, forKey: .ready)
         
         self.init(id: id, name: name, primary: primary, type: type, currencyCode: currencyCode, currencyName: currencyName, balance: balance, created_at: created_at, updated_at: updated_at, resource: resource, resourcePath: resourcePath)
     }

@@ -47,8 +47,6 @@ class ViewController: UIViewController {
     }
     
     private func getAccount() {
-//        self.authorizeCoinbase()
-        
         let retrier = OAuth2RetryHandler(oauth2: oauth2)
         sessionManager.adapter = retrier
         sessionManager.retrier = retrier
@@ -59,8 +57,6 @@ class ViewController: UIViewController {
             switch result {
             case let .success(response):
                 do {
-//                    let json = try JSONSerialization.jsonObject(with: result.value!.data, options: []) as? [String : Any]
-//                    debugPrint("Coinbase account json:\(json)")
                     let filteredResponse = try response.filterSuccessfulStatusCodes()
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .secondsSince1970
@@ -80,8 +76,6 @@ class ViewController: UIViewController {
     }
     
     private func getUser() {
-//        self.authorizeCoinbase()
-        
         let retrier = OAuth2RetryHandler(oauth2: oauth2)
         sessionManager.adapter = retrier
         sessionManager.retrier = retrier

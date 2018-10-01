@@ -19,7 +19,7 @@ struct OAuthManager {
         "token_uri": "https://api.coinbase.com/oauth/token",   // code grant only
         "redirect_uris": ["app://oauth-tutorial"],   // register your own "myapp" scheme in Info.plist
         "scope": "wallet:user:read,wallet:accounts:read,wallet:addresses:read,wallet:transactions:read",
-        "secret_in_body": false,    // Github needs this
-        "keychain": true,         // if you DON'T want keychain integration
+        "secret_in_body": false,
+        "keychain": true,   // false, if you DON'T want keychain integration
         ] as OAuth2JSON)
 }

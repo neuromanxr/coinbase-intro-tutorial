@@ -42,10 +42,7 @@ extension CoinbaseServices: TargetType {
         }
     }
     var sampleData: Data {
-        switch self {
-        case .getUser, .getAccount:
-            return "Half measures are as bad as nothing at all.".utf8Encoded
-        }
+        return "Half measures are as bad as nothing at all.".utf8Encoded
     }
     var headers: [String: String]? {
         return [
